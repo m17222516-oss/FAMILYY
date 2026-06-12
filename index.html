@@ -119,14 +119,14 @@ input[name=restab]{display:none}
 .ba-card:hover{border-color:var(--line2)}
 
 /* صف الصور: ارتفاع ثابت، عمودان متساويان */
-.ba-img-row{display:grid;grid-template-columns:1fr 1fr;height:200px}
+.ba-img-row{display:grid;grid-template-columns:1fr 1fr;height:300px}
 
 /* كل جانب يملأ مساحته بالكامل */
 .ba-side{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.03)}
 .ba-side.after{background:var(--c1-muted)}
 
 /* الصورة تملأ الجانب كاملاً بدون تشويه */
-.ba-side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.ba-side img{position:absolute;inset:0;width:300PX;height:300PX;object-fit:cover;object-position:center;display:block}
 
 /* أيقونة placeholder تظهر فقط إذا لم تكن هناك صورة */
 .ba-placeholder{width:28px;height:28px;opacity:.18;fill:var(--txt);flex-shrink:0;position:relative;z-index:1}
@@ -272,7 +272,7 @@ input[name=restab]{display:none}
       <div class="offers-grid">
         <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">فل بدي</div><div class="offer-desc">جميع مناطق الجسم</div><div class="offer-price">350,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
         <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">فل بدي عدا بطن+ظهر</div><div class="offer-desc">ما عدا البطن والظهر</div><div class="offer-price">300,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">أرجل كاملة</div><div class="offer-desc">من الركبة حتى القدم</div><div class="offer-price">150,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">أرجل كاملة</div><div class="offer-desc">من الفخذ حتى القدم</div><div class="offer-price">150,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
         <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">نصف أرجل</div><div class="offer-desc">نصف الساق</div><div class="offer-price">100,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
         <div class="offer-card"><div class="offer-idx">5</div><div class="offer-name">أيدي كاملة</div><div class="offer-desc">من الكتف حتى الأصابع</div><div class="offer-price">120,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
         <div class="offer-card"><div class="offer-idx">6</div><div class="offer-name">نصف أيدي</div><div class="offer-desc">من الكوع</div><div class="offer-price">90,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
@@ -290,16 +290,20 @@ input[name=restab]{display:none}
     <div class="tab-panel" id="p2">
       <div class="panel-hd"><h3>ليزر DEKA Motus</h3><p>أضيفي أسعار ديكا في الكود أدناه</p></div>
       <div class="offers-grid">
-        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">فل بدي</div><div class="offer-desc">جميع مناطق الجسم</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">فل بدي عدا بطن+ظهر</div><div class="offer-desc">ما عدا البطن والظهر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">أرجل كاملة</div><div class="offer-desc">من الركبة حتى القدم</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">نصف أرجل</div><div class="offer-desc">نصف الساق</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">5</div><div class="offer-name">أيدي كاملة</div><div class="offer-desc">من الكتف حتى الأصابع</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">6</div><div class="offer-name">نصف أيدي</div><div class="offer-desc">من الكوع</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">7</div><div class="offer-name">بيكيني</div><div class="offer-desc">&nbsp;</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">8</div><div class="offer-name">إبط / أكزلا</div><div class="offer-desc">&nbsp;</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">9</div><div class="offer-name">وجه</div><div class="offer-desc">&nbsp;</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">10</div><div class="offer-name">خلفية</div><div class="offer-desc">&nbsp;</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">فل بدي</div><div class="offer-desc">جميع مناطق الجسم</div><div class="offer-price">175,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">فل بدي عدا بطن+ظهر</div><div class="offer-desc">ما عدا البطن والظهر</div><div class="offer-price">150,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">أرجل كاملة</div><div class="offer-desc">من الفخذ حتى القدم</div><div class="offer-price">90,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">نصف أرجل</div><div class="offer-desc">نصف الساق</div><div class="offer-price">65,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">5</div><div class="offer-name">أيدي كاملة</div><div class="offer-desc">من الكتف حتى الأصابع</div><div class="offer-price">65,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">6</div><div class="offer-name">نصف أيدي</div><div class="offer-desc">من الكوع</div><div class="offer-price">45,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">7</div><div class="offer-name">بيكيني</div><div class="offer-desc">&nbsp;</div><div class="offer-price">25,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">8</div><div class="offer-name">إبط / أكزلا</div><div class="offer-desc">&nbsp;</div><div class="offer-price">25,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">9</div><div class="offer-name">وجه</div><div class="offer-desc">&nbsp;</div><div class="offer-price">25,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">10</div><div class="offer-name">خلفية</div><div class="offer-desc">&nbsp;</div><div class="offer-price">50,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">11</div><div class="offer-name">ذقن + شارب</div><div class="offer-desc">&nbsp;</div><div class="offer-price">20,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">12</div><div class="offer-name">تحديد لحية مع رقبة</div><div class="offer-desc">&nbsp;</div><div class="offer-price">40,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">14</div><div class="offer-name">بطن</div><div class="offer-desc">&nbsp;</div><div class="offer-price">45,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">15</div><div class="offer-name">ظهر</div><div class="offer-desc">&nbsp;</div><div class="offer-price">45,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
       </div>
     </div>
     <div class="tab-panel" id="p3">
@@ -311,67 +315,73 @@ input[name=restab]{display:none}
       </div>
     </div>
     <div class="tab-panel" id="p4">
-      <div class="panel-hd"><h3>النضارة ومحفزات الكولاجين</h3><p>أضيفي الاسم والسعر في الكود أدناه</p></div>
+      <div class="panel-hd"><h3>النضارة ومحفزات الكولاجين</h3><p></p></div>
       <div class="offers-grid">
-        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="add-offer-hint" style="grid-column:1/-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="fill:var(--c4);flex-shrink:0"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>لإضافة عرض: انسخي بلوك <code>.offer-card</code> وعدّلي الاسم والسعر</div>
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">ابرة سلمون</div><div class="offer-desc"></div><div class="offer-price">100,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">ابرة عمبر - زعفران</div><div class="offer-desc"></div><div class="offer-price">100,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">ابرة الرفيتال</div><div class="offer-desc"></div><div class="offer-price">100,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">ميلازما بريت للتصبغات</div><div class="offer-desc"></div><div class="offer-price">100,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">5</div><div class="offer-name">الابرة الوردية</div><div class="offer-desc"></div><div class="offer-price">120,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">6</div><div class="offer-name">ابرة السايتوكير الفرنسية</div><div class="offer-desc"></div><div class="offer-price">180,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">7</div><div class="offer-name">ابرة الجوري</div><div class="offer-desc">&nbsp;</div><div class="offer-price">180,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">8</div><div class="offer-name">ابرة السكنجر</div><div class="offer-desc">&nbsp;</div><div class="offer-price">190,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">9</div><div class="offer-name">ابرة البوليسوم</div><div class="offer-desc">&nbsp;</div><div class="offer-price">190,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">10</div><div class="offer-name">ابرة الكاريزما</div><div class="offer-desc">&nbsp;</div><div class="offer-price">220,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
       </div>
     </div>
     <div class="tab-panel" id="p5">
-      <div class="panel-hd"><h3>التقشير</h3><p>أضيفي الاسم والسعر في الكود</p></div>
+      <div class="panel-hd"><h3>التقشير</h3><p></p></div>
       <div class="offers-grid">
-        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-      </div>
+       <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">تقشير الحبوب</div><div class="offer-desc"></div><div class="offer-price">60,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">تقشير التصبغات</div><div class="offer-desc"></div><div class="offer-price">60,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        </div>
     </div>
     <div class="tab-panel" id="p6">
-      <div class="panel-hd"><h3>علاج تساقط الشعر</h3><p>أضيفي الاسم والسعر في الكود</p></div>
+      <div class="panel-hd"><h3>علاج تساقط الشعر</h3><p></p></div>
       <div class="offers-grid">
-        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">بلازما عادية</div><div class="offer-desc"></div><div class="offer-price">35,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">بلازما مفعلة</div><div class="offer-desc"></div><div class="offer-price">55,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">بلازما نانو ماتركس</div><div class="offer-desc"></div><div class="offer-price">75,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">بلازما مينوكسديل</div><div class="offer-desc"></div><div class="offer-price">150,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+       <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">بلازما بايوجنكس</div><div class="offer-desc"></div><div class="offer-price">180,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+      
       </div>
     </div>
     <div class="tab-panel" id="p7">
-      <div class="panel-hd"><h3>البوتوكس</h3><p>أضيفي الاسم والسعر في الكود</p></div>
+      <div class="panel-hd"><h3>البوتوكس</h3><p></p></div>
       <div class="offers-grid">
-        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+       <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">عرض الشخصين (الصديقات)</div><div class="offer-desc"></div><div class="offer-price">150,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">بوتوكس غازي</div><div class="offer-desc"></div><div class="offer-price">120,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">بوتوكس باودر</div><div class="offer-desc"></div><div class="offer-price">100,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+      
       </div>
     </div>
     <div class="tab-panel" id="p8">
       <div class="panel-hd"><h3>الفلر</h3><p>أضيفي الاسم والسعر في الكود</p></div>
       <div class="offers-grid">
-        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">الفلر الكوري</div><div class="offer-desc"></div><div class="offer-price">80,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">الفلر الكوري براند</div><div class="offer-desc"></div><div class="offer-price">90,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">الفلر الايطالي</div><div class="offer-desc"></div><div class="offer-price">110,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">فلر الاكزوزوم</div><div class="offer-desc"></div><div class="offer-price">130,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">فلر سويسري (تيوسيال)</div><div class="offer-desc"></div><div class="offer-price">180,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+      
       </div>
     </div>
     <div class="tab-panel" id="p9">
-      <div class="panel-hd"><h3>الهالات وتحت العين</h3><p>أضيفي الاسم والسعر في الكود</p></div>
+      <div class="panel-hd"><h3>الهالات وتحت العين</h3><p></p></div>
       <div class="offers-grid">
-        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">ميزو هالات</div><div class="offer-desc"></div><div class="offer-price">35,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">ميزو هالات بلص</div><div class="offer-desc"></div><div class="offer-price">60,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+       <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">ميزو تنشيف الحبوب</div><div class="offer-desc"></div><div class="offer-price">60,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">ابرة السايتوكير الفرنسية</div><div class="offer-desc"></div><div class="offer-price">180,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+      
       </div>
     </div>
     <div class="tab-panel" id="p10">
-      <div class="panel-hd"><h3>السيكرت</h3><p>أضيفي الاسم والسعر في الكود</p></div>
+      <div class="panel-hd"><h3>السيكرت</h3><p></p></div>
       <div class="offers-grid">
-        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+       <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">سيكرت</div><div class="offer-desc"></div><div class="offer-price">75,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">سيكرت + بلازما نانو ماتركس</div><div class="offer-desc"></div><div class="offer-price">150,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
       </div>
     </div>
   </div>
@@ -459,9 +469,7 @@ input[name=restab]{display:none}
             <div class="ba-info-meta"><span class="ba-tag">DEKA Motus</span><span class="ba-tag">4 جلسات</span></div>
           </div>
         </div>
-        <div class="ba-add-hint">
-          <p>لإضافة صور: في كل <code style="background:rgba(247,87,37,0.15);color:var(--c4);padding:2px 6px;border-radius:4px;font-size:11px">.ba-side</code> ضعي <code style="background:rgba(247,87,37,0.15);color:var(--c4);padding:2px 6px;border-radius:4px;font-size:11px">&lt;img src="..."&gt;</code> واحذفي الـ SVG</p>
-        </div>
+        
       </div>
     </div>
 
@@ -482,32 +490,31 @@ input[name=restab]{display:none}
             </div>
           </div>
           <div class="ba-info">
-            <div class="ba-info-title">نتيجة الفلر</div>
-            <div class="ba-info-desc">أضيفي وصف الحالة ونوع المادة المستخدمة</div>
+            <div class="ba-info-title">نتيجة فلر الذقن</div>
+            <div class="ba-info-desc">فلر ذقن 6CC تيوسيال سحب الذقن وتعويضة</div>
             <div class="ba-info-meta"><span class="ba-tag">فلر</span><span class="ba-tag">جلسة واحدة</span></div>
           </div>
         </div>
         <div class="ba-card">
           <div class="ba-img-row">
             <div class="ba-side before">
-              <img src="assets/photo2.jpg" alt="قبل">
+              <img src="assets/photo6.jpg" alt="قبل">
               <svg class="ba-placeholder" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
               <span class="ba-side-label">قبل</span>
             </div>
             <div class="ba-side after">
-              <img src="assets/photo1.jpg" alt="بعد">
+              <img src="assets/photo5.jpg" alt="بعد">
               <svg class="ba-placeholder" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
               <span class="ba-side-label">بعد</span>
             </div>
           </div>
           <div class="ba-info">
-            <div class="ba-info-title">نتيجة البوتوكس</div>
-            <div class="ba-info-desc">أضيفي وصف الحالة والوحدات المستخدمة</div>
+            <div class="ba-info-title">نتيجة فلر وجه + شفة</div>
+            <div class="ba-info-desc">حقن  7CC للوجه والشفة , حقن وجنات وجوانب الذقن وتعديل رسمة الشفة</div>
             <div class="ba-info-meta"><span class="ba-tag">بوتوكس</span><span class="ba-tag">جلسة واحدة</span></div>
           </div>
         </div>
         <div class="ba-add-hint">
-          <p>لإضافة صور: في كل <code style="background:rgba(247,87,37,0.15);color:var(--c4);padding:2px 6px;border-radius:4px;font-size:11px">.ba-side</code> ضعي <code style="background:rgba(247,87,37,0.15);color:var(--c4);padding:2px 6px;border-radius:4px;font-size:11px">&lt;img src="..."&gt;</code> واحذفي الـ SVG</p>
         </div>
       </div>
     </div>
