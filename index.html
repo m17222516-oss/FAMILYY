@@ -6,79 +6,100 @@
 <title>فاملي لطب التجميل والليزر</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
+/* ── RESET ── */
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Tajawal',sans-serif;background:#f9f5f1;color:#1a0f0a;padding-bottom:72px}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:'Tajawal',sans-serif;background:#69412c;color:#f0ebe7;padding-bottom:68px;min-height:100vh}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 
+/* ── TOKENS ── */
 :root{
-  --br:#e8ddd7;
-  --ink:#1a0f0a;
-  --muted:#7a5c52;
-  --bg:#f9f5f1;
-  --card:#ffffff;
-  --accent:#c9541e;
-  --accent-soft:#fdf0eb;
-  --accent2:#3d1f10;
-  --wa:#25d366;
-  --gold:#b8860b;
+  --c1:#f75725;
+  --c1-dim:#c94318;
+  --c1-muted:rgba(247,87,37,0.12);
+  --c1-border:rgba(247,87,37,0.28);
+  --c2:#3f240f;
+  --c3:#683c19;
+  --c4:#f97d56;
+  --c5:#e13c08;
+  --c6:#ffffff;
+  --ink:#0e0a08;
+  --surface:#1a1108;
+  --surface2:#221608;
+  --surface3:#2c1d0e;
+  --line:rgba(255,255,255,0.07);
+  --line2:rgba(255,255,255,0.12);
+  --txt:#f0ebe7;
+  --txt2:rgba(240,235,231,0.6);
+  --txt3:rgba(240,235,231,0.35);
+  --radius:12px;
+  --radius-sm:8px;
+  --radius-lg:16px;
+  --radius-xl:20px;
 }
 
-.wrap{max-width:480px;margin:0 auto;background:var(--bg);min-height:100vh}
+/* ── WRAP ── */
+.app{max-width:480px;margin:0 auto;background:var(--surface);min-height:100vh;position:relative}
 
 /* ── HEADER ── */
-.hdr{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--br);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.hdr-brand{display:flex;align-items:center;gap:10px}
-.hdr-brand img{width:46px;height:46px;border-radius:10px;object-fit:contain;border:1px solid var(--br)}
-.hdr-brand h1{font-size:15px;font-weight:900;line-height:1.3;color:var(--ink)}
-.hdr-brand span{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:1px}
-.hdr-wa{background:var(--wa);color:#fff;padding:9px 18px;border-radius:100px;font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.hdr{position:sticky;top:0;z-index:100;background:rgba(66, 52, 38, 0.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:0 20px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.hdr-left{display:flex;align-items:center;gap:10px}
+.hdr-dot{width:8px;height:8px;border-radius:50%;background:var(--c1)}
+.hdr-name{font-size:14px;font-weight:700;color:var(--txt);letter-spacing:-0.01em}
+.hdr-sub{font-size:11px;color:var(--txt3);font-weight:400;margin-top:1px}
+.hdr-pill{display:flex;align-items:center;gap:6px;background:var(--c1);color:#fff;padding:8px 16px;border-radius:100px;font-size:12px;font-weight:700;letter-spacing:0.01em}
 
 /* ── HERO ── */
-.hero{background:var(--accent2);color:#fff;padding:36px 24px 40px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-60px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(201,84,30,0.12);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-80px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(201,84,30,0.08);pointer-events:none}
-.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(201,84,30,0.2);border:1px solid rgba(201,84,30,0.35);color:#f8c4a8;padding:6px 14px;border-radius:100px;font-size:12px;font-weight:700;margin-bottom:20px}
-.hero h2{font-size:32px;font-weight:900;line-height:1.25;margin-bottom:10px}
-.hero h2 em{font-style:normal;color:#e8946a}
-.hero p{font-size:13.5px;line-height:1.85;color:rgba(255,255,255,0.75);margin-bottom:24px}
-.hero-btns{display:flex;gap:10px;flex-wrap:wrap}
-.btn-pri{background:var(--accent);color:#fff;padding:13px 22px;border-radius:12px;font-weight:900;font-size:14px;flex:1;text-align:center}
-.btn-sec{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:13px 22px;border-radius:12px;font-weight:700;font-size:13px;text-align:center}
-.hero-loc{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.13);border-radius:12px;padding:12px 14px;margin-top:16px;font-size:13px;color:rgba(255,255,255,0.8)}
-.hero-loc svg{flex-shrink:0;opacity:0.6}
+.hero{padding:40px 24px 44px;background:var(--surface);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.hero-accent{position:absolute;top:-120px;right:-80px;width:320px;height:320px;border-radius:50%;background:rgba(247,87,37,0.07);pointer-events:none}
+.hero-accent2{position:absolute;bottom:-60px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(104,60,25,0.25);pointer-events:none}
+.hero-kicker{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--c1-border);background:var(--c1-muted);color:var(--c4);padding:6px 14px;border-radius:100px;font-size:11.5px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:22px}
+.hero-kicker-dot{width:5px;height:5px;border-radius:50%;background:var(--c1);flex-shrink:0}
+.hero h2{font-size:30px;font-weight:900;line-height:1.2;letter-spacing:-0.02em;color:var(--txt);margin-bottom:6px}
+.hero h2 span{color:var(--c1)}
+.hero-sub{font-size:13.5px;color:var(--txt2);line-height:1.8;margin-bottom:28px;max-width:340px}
+.hero-actions{display:grid;grid-template-columns:1fr auto;gap:10px;margin-bottom:20px}
+.btn-primary{background:var(--c1);color:#fff;padding:14px 20px;border-radius:var(--radius);font-weight:800;font-size:14px;text-align:center;border:none;cursor:pointer;letter-spacing:0.01em;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-ghost{background:var(--surface3);border:1px solid var(--line2);color:var(--txt2);padding:14px 18px;border-radius:var(--radius);font-weight:700;font-size:13px;text-align:center;white-space:nowrap}
+.hero-location{display:flex;align-items:center;gap:10px;background:var(--surface2);border:1px solid var(--line);border-radius:var(--radius);padding:13px 16px;font-size:12.5px;color:var(--txt2);line-height:1.6}
+.hero-location-icon{width:32px;height:32px;border-radius:var(--radius-sm);background:var(--c1-muted);border:1px solid var(--c1-border);display:grid;place-items:center;flex-shrink:0}
+.hero-location-icon svg{width:15px;height:15px;fill:var(--c1)}
+.hero-location strong{display:block;color:var(--txt);font-size:12px;font-weight:700;margin-bottom:1px}
 
 /* ── SOCIALS ── */
-.socials{background:#fff;border-bottom:1px solid var(--br);display:grid;grid-template-columns:repeat(4,1fr)}
-.socials a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:14px 8px;font-size:11px;font-weight:700;color:var(--muted);border-left:1px solid var(--br)}
+.socials{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line);background:var(--surface2)}
+.socials a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:14px 6px;font-size:11px;font-weight:700;color:var(--txt3);border-left:1px solid var(--line);transition:color .15s,background .15s}
 .socials a:last-child{border-left:none}
-.socials a svg{width:20px;height:20px}
-.socials a:hover{color:var(--accent);background:var(--accent-soft)}
+.socials a svg{width:18px;height:18px;opacity:.55}
+.socials a:hover{color:var(--c4);background:var(--c1-muted)}
+.socials a:hover svg{opacity:1}
 
-/* ── SECTIONS ── */
-.section{padding:32px 20px}
-.section-eyebrow{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px}
-.section-title{font-size:26px;font-weight:900;color:var(--ink);line-height:1.25;margin-bottom:6px}
-.section-sub{font-size:13.5px;color:var(--muted);line-height:1.8}
+/* ── SECTION ── */
+.section{padding:36px 20px}
+.sec-head{margin-bottom:24px}
+.sec-kicker{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--c4);margin-bottom:9px}
+.sec-kicker::before{content:'';width:16px;height:1px;background:var(--c1);display:block}
+.sec-title{font-size:24px;font-weight:900;color:var(--txt);letter-spacing:-0.02em;line-height:1.25}
+.sec-sub{font-size:13px;color:var(--txt2);line-height:1.75;margin-top:6px}
 
-/* ── OFFERS TABS ── */
-.offers-section{background:#fff}
-.tabs-scroll{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.tabs-scroll::-webkit-scrollbar{display:none}
+/* ── OFFERS ── */
+.offers-section{background:var(--surface)}
 input[name=tab]{display:none}
-.tab-label{white-space:nowrap;background:var(--bg);border:1px solid var(--br);border-radius:100px;padding:9px 16px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;flex-shrink:0;transition:all .15s}
-.tab-panel{display:none}
-#t1:checked~.tabs-scroll .l1,
-#t2:checked~.tabs-scroll .l2,
-#t3:checked~.tabs-scroll .l3,
-#t4:checked~.tabs-scroll .l4,
-#t5:checked~.tabs-scroll .l5,
-#t6:checked~.tabs-scroll .l6,
-#t7:checked~.tabs-scroll .l7,
-#t8:checked~.tabs-scroll .l8,
-#t9:checked~.tabs-scroll .l9,
-#t10:checked~.tabs-scroll .l10{background:var(--accent);border-color:var(--accent);color:#fff}
+.tabs-row{display:flex;gap:7px;overflow-x:auto;padding-bottom:16px;scrollbar-width:none}
+.tabs-row::-webkit-scrollbar{display:none}
+.tab-label{white-space:nowrap;background:var(--surface3);border:1px solid var(--line2);border-radius:100px;padding:8px 16px;font-size:12px;font-weight:700;color:var(--txt3);cursor:pointer;flex-shrink:0;transition:all .15s;font-family:'Tajawal',sans-serif}
+#t1:checked~.tabs-row .l1,
+#t2:checked~.tabs-row .l2,
+#t3:checked~.tabs-row .l3,
+#t4:checked~.tabs-row .l4,
+#t5:checked~.tabs-row .l5,
+#t6:checked~.tabs-row .l6,
+#t7:checked~.tabs-row .l7,
+#t8:checked~.tabs-row .l8,
+#t9:checked~.tabs-row .l9,
+#t10:checked~.tabs-row .l10{background:var(--c1);border-color:var(--c1);color:#fff}
+.panels .tab-panel{display:none}
 #t1:checked~.panels #p1,
 #t2:checked~.panels #p2,
 #t3:checked~.panels #p3,
@@ -89,96 +110,143 @@ input[name=tab]{display:none}
 #t8:checked~.panels #p8,
 #t9:checked~.panels #p9,
 #t10:checked~.panels #p10{display:block}
-.panels{margin-top:4px}
-.panel-intro{margin-bottom:16px}
-.panel-intro h3{font-size:20px;font-weight:900;color:var(--ink)}
-.panel-intro p{font-size:12.5px;color:var(--muted);margin-top:4px}
-.offers-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.offer-card{background:var(--bg);border:1px solid var(--br);border-radius:14px;padding:14px 12px;position:relative}
-.offer-card:hover{border-color:var(--accent);background:var(--accent-soft)}
-.offer-num{position:absolute;top:12px;left:12px;background:var(--accent);color:#fff;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-size:12px;font-weight:900}
-.offer-name{font-size:14px;font-weight:900;color:var(--ink);margin-left:38px;line-height:1.4;margin-bottom:4px}
-.offer-desc{font-size:11.5px;color:var(--muted);line-height:1.6;margin-bottom:8px;min-height:18px}
-.offer-price{font-size:15px;font-weight:900;color:var(--accent);margin-bottom:10px}
-.offer-book{display:block;text-align:center;background:rgba(201,84,30,0.1);border:1px solid rgba(201,84,30,0.2);color:var(--accent);border-radius:9px;padding:7px;font-size:12px;font-weight:900;transition:all .15s}
-.offer-book:hover{background:var(--accent);color:#fff}
+.panel-hd{margin-bottom:18px}
+.panel-hd h3{font-size:18px;font-weight:900;color:var(--txt);letter-spacing:-0.01em}
+.panel-hd p{font-size:12px;color:var(--txt3);margin-top:3px}
+.panel-badge{display:inline-block;background:rgba(247,87,37,0.15);color:var(--c4);border:1px solid var(--c1-border);border-radius:100px;font-size:10.5px;font-weight:700;padding:3px 10px;margin-top:6px;letter-spacing:0.03em}
+.offers-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.offer-card{background:var(--surface2);border:1px solid var(--line);border-radius:var(--radius);padding:14px 12px;position:relative;transition:border-color .15s,background .15s;display:flex;flex-direction:column}
+.offer-card:hover{border-color:var(--c1-border);background:var(--surface3)}
+.offer-idx{position:absolute;top:11px;left:11px;width:26px;height:26px;border-radius:7px;background:var(--c1-muted);border:1px solid var(--c1-border);display:grid;place-items:center;font-size:11px;font-weight:900;color:var(--c4)}
+.offer-name{font-size:13.5px;font-weight:800;color:var(--txt);margin-right:0;margin-left:34px;line-height:1.35;margin-bottom:4px}
+.offer-desc{font-size:11px;color:var(--txt3);line-height:1.55;margin-bottom:auto;padding-bottom:8px}
+.offer-price{font-size:15px;font-weight:900;color:var(--c1);margin-bottom:9px;letter-spacing:-0.01em}
+.offer-price.pending{color:var(--txt3);font-size:12px;font-weight:500}
+.offer-cta{display:block;text-align:center;background:var(--c1-muted);border:1px solid var(--c1-border);color:var(--c4);border-radius:8px;padding:7px;font-size:11.5px;font-weight:800;transition:all .15s;font-family:'Tajawal',sans-serif}
+.offer-cta:hover{background:var(--c1);color:#fff;border-color:var(--c1)}
+.placeholder-panel{grid-column:1/-1;border:1px dashed rgba(255,255,255,0.1);border-radius:var(--radius-lg);padding:32px 20px;text-align:center}
+.placeholder-panel .ph-icon{width:40px;height:40px;border-radius:10px;background:var(--c1-muted);border:1px solid var(--c1-border);display:grid;place-items:center;margin:0 auto 12px}
+.placeholder-panel .ph-icon svg{width:18px;height:18px;fill:var(--c1)}
+.placeholder-panel h4{font-size:14px;font-weight:800;color:var(--txt2);margin-bottom:4px}
+.placeholder-panel p{font-size:12px;color:var(--txt3);line-height:1.6}
+.add-offer-hint{display:flex;align-items:center;gap:8px;background:var(--surface3);border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 14px;margin-top:12px;font-size:11.5px;color:var(--txt3)}
+.add-offer-hint code{background:var(--c1-muted);color:var(--c4);padding:2px 6px;border-radius:4px;font-size:10.5px}
 
 /* ── SERVICES ── */
-.services-section{background:var(--bg)}
-.svc-list{display:grid;gap:10px}
-.svc-card{background:var(--card);border:1px solid var(--br);border-radius:16px;padding:16px 14px;display:flex;align-items:flex-start;gap:14px}
-.svc-icon{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;flex-shrink:0;font-size:22px}
-.svc-icon.ci1{background:#fdeee8}
-.svc-icon.ci2{background:#e8f3fd}
-.svc-icon.ci3{background:#f0eafd}
-.svc-icon.ci4{background:#e8fdf3}
-.svc-icon.ci5{background:#fdf7e8}
-.svc-card h3{font-size:16px;font-weight:900;color:var(--ink);margin-bottom:5px}
-.svc-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.services-section{background:var(--surface2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.svc-grid{display:grid;gap:9px}
+.svc-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;display:flex;gap:14px;align-items:flex-start;transition:border-color .15s}
+.svc-card:hover{border-color:var(--line2)}
+.svc-icon{width:44px;height:44px;border-radius:var(--radius-sm);background:var(--c1-muted);border:1px solid var(--c1-border);display:grid;place-items:center;flex-shrink:0}
+.svc-icon svg{width:20px;height:20px;fill:var(--c1)}
+.svc-name{font-size:15px;font-weight:800;color:var(--txt);margin-bottom:4px}
+.svc-desc{font-size:12.5px;color:var(--txt2);line-height:1.65}
+
+/* ── RESULTS ── */
+.results-section{background:var(--surface)}
+.results-tabs{display:flex;gap:8px;margin-bottom:20px}
+.res-tab-label{flex:1;text-align:center;background:var(--surface3);border:1px solid var(--line2);border-radius:var(--radius-sm);padding:10px;font-size:13px;font-weight:700;color:var(--txt3);cursor:pointer;font-family:'Tajawal',sans-serif;transition:all .15s}
+input[name=restab]{display:none}
+#r1:checked~.results-tabs .rl1,
+#r2:checked~.results-tabs .rl2{background:var(--c1);border-color:var(--c1);color:#fff}
+.res-panels .res-panel{display:none}
+#r1:checked~.res-panels #rp1,
+#r2:checked~.res-panels #rp2{display:block}
+.ba-grid{display:grid;gap:10px}
+.ba-card{background:var(--surface2);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;transition:border-color .15s}
+.ba-card:hover{border-color:var(--line2)}
+.ba-img-row{display:grid;grid-template-columns:1fr 1fr;height:130px}
+.ba-side{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;position:relative}
+.ba-side.before{background:rgba(255,255,255,0.03)}
+.ba-side.after{background:var(--c1-muted)}
+.ba-side-label{position:absolute;bottom:8px;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:3px 10px;border-radius:100px}
+.ba-side.before .ba-side-label{background:rgba(255,255,255,0.1);color:var(--txt3)}
+.ba-side.after .ba-side-label{background:var(--c1);color:#fff}
+.ba-placeholder svg{width:28px;height:28px;opacity:.2;fill:var(--txt)}
+.ba-info{padding:14px 16px}
+.ba-info-title{font-size:14px;font-weight:800;color:var(--txt);margin-bottom:3px}
+.ba-info-desc{font-size:12px;color:var(--txt3);line-height:1.6}
+.ba-info-meta{display:flex;align-items:center;gap:8px;margin-top:8px}
+.ba-tag{font-size:10.5px;font-weight:700;background:var(--c1-muted);color:var(--c4);border:1px solid var(--c1-border);padding:3px 9px;border-radius:100px}
+.ba-add-hint{border:1px dashed rgba(255,255,255,0.1);border-radius:var(--radius);padding:24px 16px;text-align:center;margin-top:10px}
+.ba-add-hint p{font-size:12px;color:var(--txt3);line-height:1.7}
 
 /* ── CONTACT ── */
-.contact-section{background:var(--accent2);color:#fff}
-.contact-section .section-eyebrow{color:#e8946a}
-.contact-section .section-title{color:#fff}
-.contact-section .section-sub{color:rgba(255,255,255,0.65)}
-.contact-list{display:grid;gap:10px;margin-top:20px}
-.contact-row{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:13px 16px;font-size:13.5px;display:flex;align-items:flex-start;gap:10px;line-height:1.65;color:rgba(255,255,255,0.85)}
-.contact-row svg{flex-shrink:0;margin-top:2px;opacity:0.6}
-.cta-wa{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;background:var(--wa);color:#fff;border-radius:14px;padding:16px;font-weight:900;font-size:15px}
-
-/* ── BOTTOM NAV ── */
-.bnav{position:fixed;bottom:0;left:0;right:0;z-index:200;background:#fff;border-top:1px solid var(--br);display:flex;justify-content:center}
-.bnav-inner{max-width:480px;width:100%;display:grid;grid-template-columns:repeat(4,1fr)}
-.bnav a{display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 4px 8px;font-size:11px;font-weight:700;color:var(--muted)}
-.bnav a svg{width:22px;height:22px}
-.bnav a.active{color:var(--accent)}
-.bnav-book{background:var(--wa)!important;color:#fff!important;border-radius:0}
-
-/* ── FLOAT ── */
-.float-wa{position:fixed;bottom:82px;left:20px;z-index:150;width:52px;height:52px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 4px 20px rgba(37,211,102,0.45)}
+.contact-section{background:var(--surface2);border-top:1px solid var(--line)}
+.contact-list{display:grid;gap:9px;margin:20px 0 0}
+.contact-row{display:flex;align-items:flex-start;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.contact-icon{width:36px;height:36px;border-radius:var(--radius-sm);background:var(--c1-muted);border:1px solid var(--c1-border);display:grid;place-items:center;flex-shrink:0}
+.contact-icon svg{width:16px;height:16px;fill:var(--c1)}
+.contact-row-label{font-size:10.5px;font-weight:700;color:var(--txt3);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:3px}
+.contact-row-val{font-size:13px;color:var(--txt);font-weight:500;line-height:1.55}
+.cta-wa-btn{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:16px;background:#25d366;color:#fff;border-radius:var(--radius);padding:16px;font-weight:800;font-size:14px;letter-spacing:0.01em;transition:background .15s}
+.cta-wa-btn svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
 
 /* ── FOOTER ── */
-.foot{text-align:center;padding:20px;color:var(--muted);font-size:12px;background:#fff;border-top:1px solid var(--br)}
+.foot{text-align:center;padding:20px;color:var(--txt3);font-size:11.5px;border-top:1px solid var(--line);background:var(--surface2)}
+.foot span{color:var(--txt2)}
+
+/* ── FLOAT ── */
+.float-wa{position:fixed;bottom:80px;left:18px;z-index:150;width:50px;height:50px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 0 0 0 rgba(37,211,102,0)}
+.float-wa svg{width:22px;height:22px;fill:#fff}
+
+/* ── BOTTOM NAV ── */
+.bnav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;z-index:200;background:rgba(26,17,8,0.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);display:flex}
+.bnav a{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 4px;font-size:10.5px;font-weight:700;color:var(--txt3);transition:color .15s}
+.bnav a svg{width:20px;height:20px}
+.bnav a.active,
+.bnav a:hover{color:var(--c4)}
+.bnav-book{background:var(--c1)!important;color:#fff!important}
+.bnav-book:hover{background:var(--c1-dim)!important;color:#fff!important}
 
 @media(min-width:481px){
-  body{background:#ebe5df}
-  .wrap{box-shadow:0 0 60px rgba(0,0,0,0.08)}
+  body{background:#070402}
 }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="app">
 
 <!-- HEADER -->
 <header class="hdr">
-  <div class="hdr-brand">
-    <img src="assets/logo-family.png" alt="فاملي" onerror="this.style.display='none'">
+  <div class="hdr-left">
+    <div class="hdr-dot"></div>
     <div>
-      <h1>فاملي لطب التجميل والليزر</h1>
-      <span>Family Aesthetic & Laser · كربلاء</span>
+      <div class="hdr-name">فاملي لطب التجميل والليزر</div>
+      <div class="hdr-sub">Family Aesthetic &amp; Laser · كربلاء</div>
     </div>
   </div>
-  <a class="hdr-wa" href="https://wa.me/9647740317888" target="_blank">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.124 1.524 5.858L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.999a9.952 9.952 0 01-5.073-1.386l-.363-.217-3.761.986 1.003-3.663-.237-.376A9.957 9.957 0 012.001 12C2.001 6.476 6.477 2 12 2s9.999 4.476 9.999 10c0 5.525-4.476 10-9.999 10z"/></svg>
+  <a class="hdr-pill" href="https://wa.me/9647740317888" target="_blank">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.124 1.524 5.858L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
     واتساب
   </a>
 </header>
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-tag">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    مركز تجميل وليزر متخصص
+  <div class="hero-accent"></div>
+  <div class="hero-accent2"></div>
+  <div class="hero-kicker">
+    <span class="hero-kicker-dot"></span>
+    مركز تجميل وليزر متخصص — كربلاء
   </div>
-  <h2>فاملي لطب <em>التجميل والليزر</em></h2>
-  <p>جلدية، ليزر إزالة الشعر بأحدث الأجهزة، تجميل لا جراحي، أسنان، وعناية شاملة بالبشرة.</p>
-  <div class="hero-btns">
-    <a class="btn-pri" href="https://wa.me/9647740317888" target="_blank">احجزي عبر واتساب</a>
-    <a class="btn-sec" href="#offers">عروض الشهر</a>
+  <h2>فاملي لطب<br><span>التجميل والليزر</span></h2>
+  <p class="hero-sub">جلدية، ليزر إزالة الشعر بأحدث الأجهزة، تجميل لا جراحي، أسنان، وعناية متكاملة بالبشرة.</p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="https://wa.me/9647740317888" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.124 1.524 5.858L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+      احجزي الآن
+    </a>
+    <a class="btn-ghost" href="#offers">العروض</a>
   </div>
-  <a class="hero-loc" href="https://www.google.com/maps/search/?api=1&query=مركز+فاملي+لطب+الاسنان+والتجميل+كربلاء+حي+الحسين" target="_blank">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-    كربلاء — حي الحسين، مقابل القاعة المغلقة
+  <a class="hero-location" href="https://www.google.com/maps/search/?api=1&query=مركز+فاملي+لطب+الاسنان+والتجميل+كربلاء" target="_blank">
+    <div class="hero-location-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    </div>
+    <div>
+      <strong>الموقع — اضغطي للخريطة</strong>
+      كربلاء، حي الحسين — مقابل القاعة المغلقة
+    </div>
   </a>
 </section>
 
@@ -193,7 +261,7 @@ input[name=tab]{display:none}
     فيسبوك
   </a>
   <a href="https://wa.me/9647740317888" target="_blank">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.124 1.524 5.858L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.999a9.952 9.952 0 01-5.073-1.386l-.363-.217-3.761.986 1.003-3.663-.237-.376A9.957 9.957 0 012.001 12C2.001 6.476 6.477 2 12 2s9.999 4.476 9.999 10c0 5.525-4.476 10-9.999 10z"/></svg>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.124 1.524 5.858L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
     واتساب
   </a>
   <a href="https://tiktok.com" target="_blank">
@@ -204,12 +272,11 @@ input[name=tab]{display:none}
 
 <!-- OFFERS -->
 <section class="section offers-section" id="offers">
-  <div class="section-eyebrow">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 12a8 8 0 01-8 8 8 8 0 01-8-8 8 8 0 018-8 8 8 0 018 8zm-9-1H7v2h4v4h2v-4h4v-2h-4V7h-2v4z"/></svg>
-    عروض الشهر
+  <div class="sec-head">
+    <div class="sec-kicker">عروض الشهر</div>
+    <h2 class="sec-title">الأسعار والعروض</h2>
+    <p class="sec-sub">اختاري القسم لعرض الأسعار التفصيلية</p>
   </div>
-  <h2 class="section-title">الأسعار والعروض</h2>
-  <p class="section-sub" style="margin-bottom:18px">اختاري القسم لعرض الأسعار</p>
 
   <input checked type="radio" name="tab" id="t1">
   <input type="radio" name="tab" id="t2">
@@ -222,7 +289,7 @@ input[name=tab]{display:none}
   <input type="radio" name="tab" id="t9">
   <input type="radio" name="tab" id="t10">
 
-  <div class="tabs-scroll">
+  <div class="tabs-row">
     <label class="tab-label l1" for="t1">كلاريتي تو</label>
     <label class="tab-label l2" for="t2">ديكا موتوز</label>
     <label class="tab-label l3" for="t3">هايدروفيشل</label>
@@ -236,148 +303,311 @@ input[name=tab]{display:none}
   </div>
 
   <div class="panels">
-    <!-- Panel 1: Clarity II -->
+
+    <!-- P1: Clarity II -->
     <div class="tab-panel" id="p1">
-      <div class="panel-intro"><h3>ليزر Clarity II</h3><p>جلسة واحدة والثانية مجانية</p></div>
+      <div class="panel-hd">
+        <h3>ليزر Clarity II</h3>
+        <p>احجزي جلسة والثانية مجاناً</p>
+        <span class="panel-badge">جلسة + جلسة مجانية</span>
+      </div>
       <div class="offers-grid">
-        <div class="offer-card"><div class="offer-num">1</div><div class="offer-name">فل بدي</div><div class="offer-desc">جميع مناطق الجسم</div><div class="offer-price">350,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">2</div><div class="offer-name">فل بدي عدا بطن+ظهر</div><div class="offer-desc">ما عدا البطن والظهر</div><div class="offer-price">300,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">3</div><div class="offer-name">أرجل كاملة</div><div class="offer-desc">من الركبة حتى القدم</div><div class="offer-price">150,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">4</div><div class="offer-name">نصف أرجل</div><div class="offer-desc">نصف الساق</div><div class="offer-price">100,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">5</div><div class="offer-name">أيدي كاملة</div><div class="offer-desc">من الكتف حتى الأصابع</div><div class="offer-price">120,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">6</div><div class="offer-name">نصف أيدي</div><div class="offer-desc">من الكوع</div><div class="offer-price">90,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">7</div><div class="offer-name">بيكيني</div><div class="offer-desc">&nbsp;</div><div class="offer-price">60,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">8</div><div class="offer-name">إبط / أكزلا</div><div class="offer-desc">&nbsp;</div><div class="offer-price">60,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">9</div><div class="offer-name">وجه</div><div class="offer-desc">&nbsp;</div><div class="offer-price">60,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">10</div><div class="offer-name">خلفية</div><div class="offer-desc">&nbsp;</div><div class="offer-price">70,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">11</div><div class="offer-name">ذقن + شارب</div><div class="offer-desc">&nbsp;</div><div class="offer-price">40,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">12</div><div class="offer-name">تحديد لحية مع رقبة</div><div class="offer-desc">&nbsp;</div><div class="offer-price">60,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">13</div><div class="offer-name">تحديد حاجب</div><div class="offer-desc">&nbsp;</div><div class="offer-price">15,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">14</div><div class="offer-name">بطن</div><div class="offer-desc">&nbsp;</div><div class="offer-price">80,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">15</div><div class="offer-name">ظهر</div><div class="offer-desc">&nbsp;</div><div class="offer-price">80,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">فل بدي</div><div class="offer-desc">جميع مناطق الجسم</div><div class="offer-price">350,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">فل بدي عدا بطن+ظهر</div><div class="offer-desc">ما عدا البطن والظهر</div><div class="offer-price">300,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">أرجل كاملة</div><div class="offer-desc">من الركبة حتى القدم</div><div class="offer-price">150,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">نصف أرجل</div><div class="offer-desc">نصف الساق</div><div class="offer-price">100,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">5</div><div class="offer-name">أيدي كاملة</div><div class="offer-desc">من الكتف حتى الأصابع</div><div class="offer-price">120,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">6</div><div class="offer-name">نصف أيدي</div><div class="offer-desc">من الكوع</div><div class="offer-price">90,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">7</div><div class="offer-name">بيكيني</div><div class="offer-desc">&nbsp;</div><div class="offer-price">60,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">8</div><div class="offer-name">إبط / أكزلا</div><div class="offer-desc">&nbsp;</div><div class="offer-price">60,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">9</div><div class="offer-name">وجه</div><div class="offer-desc">&nbsp;</div><div class="offer-price">60,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">10</div><div class="offer-name">خلفية</div><div class="offer-desc">&nbsp;</div><div class="offer-price">70,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">11</div><div class="offer-name">ذقن + شارب</div><div class="offer-desc">&nbsp;</div><div class="offer-price">40,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">12</div><div class="offer-name">تحديد لحية مع رقبة</div><div class="offer-desc">&nbsp;</div><div class="offer-price">60,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">13</div><div class="offer-name">تحديد حاجب</div><div class="offer-desc">&nbsp;</div><div class="offer-price">15,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">14</div><div class="offer-name">بطن</div><div class="offer-desc">&nbsp;</div><div class="offer-price">80,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">15</div><div class="offer-name">ظهر</div><div class="offer-desc">&nbsp;</div><div class="offer-price">80,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
       </div>
     </div>
 
-    <!-- Panel 2: DEKA -->
+    <!-- P2: DEKA -->
     <div class="tab-panel" id="p2">
-      <div class="panel-intro"><h3>ليزر DEKA Motus</h3><p>أضيفي أسعار ديكا هنا</p></div>
+      <div class="panel-hd"><h3>ليزر DEKA Motus</h3><p>أضيفي أسعار ديكا في الكود أدناه</p></div>
       <div class="offers-grid">
-        <div class="offer-card"><div class="offer-num">1</div><div class="offer-name">فل بدي</div><div class="offer-desc">جميع مناطق الجسم</div><div class="offer-price" style="color:var(--muted)">أضيفي السعر</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">2</div><div class="offer-name">فل بدي عدا بطن+ظهر</div><div class="offer-desc">ما عدا البطن والظهر</div><div class="offer-price" style="color:var(--muted)">أضيفي السعر</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">3</div><div class="offer-name">أرجل كاملة</div><div class="offer-desc">من الركبة حتى القدم</div><div class="offer-price" style="color:var(--muted)">أضيفي السعر</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">4</div><div class="offer-name">نصف أرجل</div><div class="offer-desc">نصف الساق</div><div class="offer-price" style="color:var(--muted)">أضيفي السعر</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">5</div><div class="offer-name">أيدي كاملة</div><div class="offer-desc">من الكتف حتى الأصابع</div><div class="offer-price" style="color:var(--muted)">أضيفي السعر</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">6</div><div class="offer-name">نصف أيدي</div><div class="offer-desc">من الكوع</div><div class="offer-price" style="color:var(--muted)">أضيفي السعر</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">7</div><div class="offer-name">بيكيني</div><div class="offer-desc">&nbsp;</div><div class="offer-price" style="color:var(--muted)">أضيفي السعر</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">8</div><div class="offer-name">إبط / أكزلا</div><div class="offer-desc">&nbsp;</div><div class="offer-price" style="color:var(--muted)">أضيفي السعر</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">9</div><div class="offer-name">وجه</div><div class="offer-desc">&nbsp;</div><div class="offer-price" style="color:var(--muted)">أضيفي السعر</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">10</div><div class="offer-name">خلفية</div><div class="offer-desc">&nbsp;</div><div class="offer-price" style="color:var(--muted)">أضيفي السعر</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">فل بدي</div><div class="offer-desc">جميع مناطق الجسم</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">فل بدي عدا بطن+ظهر</div><div class="offer-desc">ما عدا البطن والظهر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">أرجل كاملة</div><div class="offer-desc">من الركبة حتى القدم</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">نصف أرجل</div><div class="offer-desc">نصف الساق</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">5</div><div class="offer-name">أيدي كاملة</div><div class="offer-desc">من الكتف حتى الأصابع</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">6</div><div class="offer-name">نصف أيدي</div><div class="offer-desc">من الكوع</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">7</div><div class="offer-name">بيكيني</div><div class="offer-desc">&nbsp;</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">8</div><div class="offer-name">إبط / أكزلا</div><div class="offer-desc">&nbsp;</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">9</div><div class="offer-name">وجه</div><div class="offer-desc">&nbsp;</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">10</div><div class="offer-name">خلفية</div><div class="offer-desc">&nbsp;</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
       </div>
     </div>
 
-    <!-- Panel 3: Hydrofacial -->
+    <!-- P3: Hydrofacial -->
     <div class="tab-panel" id="p3">
-      <div class="panel-intro"><h3>هايدروفيشل</h3><p>تنظيف وترطيب ونضارة فورية</p></div>
+      <div class="panel-hd"><h3>هايدروفيشل</h3><p>تنظيف عميق، ترطيب، ونضارة فورية</p></div>
       <div class="offers-grid">
-        <div class="offer-card"><div class="offer-num">1</div><div class="offer-name">هايدروفيشل عادي</div><div class="offer-desc">تنظيف وترطيب للبشرة</div><div class="offer-price">30,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">2</div><div class="offer-name">هايدروكول</div><div class="offer-desc">ترطيب أعمق وانتعاش للبشرة</div><div class="offer-price">45,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">3</div><div class="offer-name">VIP هايدروفيشل + إبرة نضارة</div><div class="offer-desc">باقة نضارة خاصة</div><div class="offer-price">75,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">هايدروفيشل عادي</div><div class="offer-desc">تنظيف وترطيب للبشرة</div><div class="offer-price">30,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">هايدروكول</div><div class="offer-desc">ترطيب أعمق وانتعاش</div><div class="offer-price">45,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card" style="grid-column:1/-1"><div class="offer-idx">3</div><div class="offer-name" style="margin-left:34px">VIP هايدروفيشل + إبرة نضارة</div><div class="offer-desc" style="margin-right:0">باقة نضارة خاصة — تنظيف + ترطيب + إبرة نضارة</div><div class="offer-price">75,000 د.ع</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي هذا العرض</a></div>
       </div>
     </div>
 
-    <!-- Panels 4–10: Placeholder -->
+    <!-- P4: Glow / Nidara -->
     <div class="tab-panel" id="p4">
-      <div class="panel-intro"><h3>النضارة ومحفزات الكولاجين</h3><p>أضيفي الأسعار لاحقاً</p></div>
+      <div class="panel-hd"><h3>النضارة ومحفزات الكولاجين</h3><p>أضيفي الاسم والسعر في الكود أدناه</p></div>
       <div class="offers-grid">
-        <div class="offer-card"><div class="offer-num">1</div><div class="offer-name">هايدروفيشل عادي</div><div class="offer-desc">تنظيف وترطيب للبشرة</div><div class="offer-price">30,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-                  <div class="offer-card"><div class="offer-num">1</div><div class="offer-name">هايدروفيشل عادي</div><div class="offer-desc">تنظيف وترطيب للبشرة</div><div class="offer-price">30,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-                          <div class="offer-card"><div class="offer-num">1</div><div class="offer-name">هايدروفيشل عادي</div><div class="offer-desc">تنظيف وترطيب للبشرة</div><div class="offer-price">30,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">1</div><div class="offer-name">هايدروفيشل عادي</div><div class="offer-desc">تنظيف وترطيب للبشرة</div><div class="offer-price">30,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">1</div><div class="offer-name">هايدروفيشل عادي</div><div class="offer-desc">تنظيف وترطيب للبشرة</div><div class="offer-price">30,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-        <div class="offer-card"><div class="offer-num">1</div><div class="offer-name">هايدروفيشل عادي</div><div class="offer-desc">تنظيف وترطيب للبشرة</div><div class="offer-price">30,000 د.ع</div><a class="offer-book" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
-
-
-          
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="add-offer-hint" style="grid-column:1/-1">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="fill:var(--c4);flex-shrink:0"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+          لإضافة عرض: انسخي بلوك <code>.offer-card</code> وعدّلي الاسم والسعر
         </div>
       </div>
     </div>
+
+    <!-- P5: Peeling -->
     <div class="tab-panel" id="p5">
-      <div class="panel-intro"><h3>التقشير</h3><p>أضيفي الأسعار لاحقاً</p></div>
+      <div class="panel-hd"><h3>التقشير</h3><p>أضيفي الاسم والسعر في الكود</p></div>
       <div class="offers-grid">
-        <div class="offer-card" style="grid-column:1/-1;text-align:center;padding:28px 16px;background:var(--accent-soft);border-style:dashed"><div style="font-size:22px;margin-bottom:8px">✦</div><div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px">قريباً</div><div style="font-size:12.5px;color:var(--muted)">أضيفي اسم العرض والسعر مباشرة في الكود</div></div>
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
       </div>
     </div>
+
+    <!-- P6: Hair loss -->
     <div class="tab-panel" id="p6">
-      <div class="panel-intro"><h3>تساقط الشعر</h3><p>أضيفي الأسعار لاحقاً</p></div>
+      <div class="panel-hd"><h3>علاج تساقط الشعر</h3><p>أضيفي الاسم والسعر في الكود</p></div>
       <div class="offers-grid">
-        <div class="offer-card" style="grid-column:1/-1;text-align:center;padding:28px 16px;background:var(--accent-soft);border-style:dashed"><div style="font-size:22px;margin-bottom:8px">✦</div><div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px">قريباً</div><div style="font-size:12.5px;color:var(--muted)">أضيفي اسم العرض والسعر مباشرة في الكود</div></div>
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
       </div>
     </div>
+
+    <!-- P7: Botox -->
     <div class="tab-panel" id="p7">
-      <div class="panel-intro"><h3>البوتوكس</h3><p>أضيفي الأسعار لاحقاً</p></div>
+      <div class="panel-hd"><h3>البوتوكس</h3><p>أضيفي الاسم والسعر في الكود</p></div>
       <div class="offers-grid">
-        <div class="offer-card" style="grid-column:1/-1;text-align:center;padding:28px 16px;background:var(--accent-soft);border-style:dashed"><div style="font-size:22px;margin-bottom:8px">✦</div><div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px">قريباً</div><div style="font-size:12.5px;color:var(--muted)">أضيفي اسم العرض والسعر مباشرة في الكود</div></div>
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
       </div>
     </div>
+
+    <!-- P8: Filler -->
     <div class="tab-panel" id="p8">
-      <div class="panel-intro"><h3>الفلر</h3><p>أضيفي الأسعار لاحقاً</p></div>
+      <div class="panel-hd"><h3>الفلر</h3><p>أضيفي الاسم والسعر في الكود</p></div>
       <div class="offers-grid">
-        <div class="offer-card" style="grid-column:1/-1;text-align:center;padding:28px 16px;background:var(--accent-soft);border-style:dashed"><div style="font-size:22px;margin-bottom:8px">✦</div><div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px">قريباً</div><div style="font-size:12.5px;color:var(--muted)">أضيفي اسم العرض والسعر مباشرة في الكود</div></div>
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
       </div>
     </div>
+
+    <!-- P9: Under eye -->
     <div class="tab-panel" id="p9">
-      <div class="panel-intro"><h3>الهالات وتحت العين</h3><p>أضيفي الأسعار لاحقاً</p></div>
+      <div class="panel-hd"><h3>الهالات وتحت العين</h3><p>أضيفي الاسم والسعر في الكود</p></div>
       <div class="offers-grid">
-        <div class="offer-card" style="grid-column:1/-1;text-align:center;padding:28px 16px;background:var(--accent-soft);border-style:dashed"><div style="font-size:22px;margin-bottom:8px">✦</div><div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px">قريباً</div><div style="font-size:12.5px;color:var(--muted)">أضيفي اسم العرض والسعر مباشرة في الكود</div></div>
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
       </div>
     </div>
+
+    <!-- P10: Secret -->
     <div class="tab-panel" id="p10">
-      <div class="panel-intro"><h3>السيكرت</h3><p>أضيفي الأسعار لاحقاً</p></div>
+      <div class="panel-hd"><h3>السيكرت</h3><p>أضيفي الاسم والسعر في الكود</p></div>
       <div class="offers-grid">
-        <div class="offer-card" style="grid-column:1/-1;text-align:center;padding:28px 16px;background:var(--accent-soft);border-style:dashed"><div style="font-size:22px;margin-bottom:8px">✦</div><div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px">قريباً</div><div style="font-size:12.5px;color:var(--muted)">أضيفي اسم العرض والسعر مباشرة في الكود</div></div>
+        <div class="offer-card"><div class="offer-idx">1</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">2</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">3</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
+        <div class="offer-card"><div class="offer-idx">4</div><div class="offer-name">اسم العرض</div><div class="offer-desc">وصف مختصر</div><div class="offer-price pending">— أضيفي السعر —</div><a class="offer-cta" href="https://wa.me/9647740317888" target="_blank">احجزي</a></div>
       </div>
     </div>
+
   </div>
 </section>
 
 <!-- SERVICES -->
 <section class="section services-section" id="services">
-  <div class="section-eyebrow">الأقسام</div>
-  <h2 class="section-title">خدماتنا</h2>
-  <div class="svc-list" style="margin-top:20px">
+  <div class="sec-head">
+    <div class="sec-kicker">الأقسام</div>
+    <h2 class="sec-title">خدمات المركز</h2>
+  </div>
+  <div class="svc-grid">
     <div class="svc-card">
-      <div class="svc-icon ci1">🩺</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18A9 9 0 0012 3zm0 2a7 7 0 110 14A7 7 0 0112 5zm-1 3v5l4 2.4-.75 1.3L9 14V8h2z"/></svg>
+      </div>
       <div>
-        <h3>الجلدية</h3>
-        <p>استشارات وعلاجات جلدية متخصصة حسب كل حالة.</p>
+        <div class="svc-name">الجلدية</div>
+        <div class="svc-desc">استشارات وعلاجات جلدية متخصصة حسب كل حالة مع خبرة سريرية متقدمة.</div>
       </div>
     </div>
     <div class="svc-card">
-      <div class="svc-icon ci2">✨</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71L12 2zm0 3.27l4.41 9.68L12 16.6l-4.41-2.65L12 5.27z"/></svg>
+      </div>
       <div>
-        <h3>ليزر إزالة الشعر</h3>
-        <p>كلاريتي تو وديكا موتوز — أحدث أجهزة الليزر لجميع مناطق الجسم.</p>
+        <div class="svc-name">ليزر إزالة الشعر</div>
+        <div class="svc-desc">جهازا Clarity II وDEKA Motus — أحدث تقنيات الليزر لجميع مناطق الجسم والبشرة.</div>
       </div>
     </div>
     <div class="svc-card">
-      <div class="svc-icon ci3">💉</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 11.24V7.5a2.5 2.5 0 015 0v3.74c1.21-.81 2-2.18 2-3.74a4 4 0 00-8 0c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H13v-6a1.5 1.5 0 00-3 0v10.32l-3.15-.63-.07-.01a1 1 0 00-.92.41l-.97 1.29 4.5 4.53c.38.38.89.59 1.43.59h5.21c1 0 1.84-.73 1.98-1.72l.63-4.46c.12-.81-.33-1.6-1.1-1.95z"/></svg>
+      </div>
       <div>
-        <h3>التجميل اللاجراحي</h3>
-        <p>بوتوكس، فلر، إبر النضارة، محفزات الكولاجين، والسيكرت.</p>
+        <div class="svc-name">التجميل اللاجراحي</div>
+        <div class="svc-desc">بوتوكس، فلر، إبر النضارة، محفزات الكولاجين، والسيكرت RF.</div>
       </div>
     </div>
     <div class="svc-card">
-      <div class="svc-icon ci4">🦷</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1c0-3.87 3.13-7 7-7s7 3.13 7 7v1h-4v8h4c1.1 0 2-.9 2-2v-7c0-4.97-4.03-9-9-9z"/></svg>
+      </div>
       <div>
-        <h3>طب الأسنان</h3>
-        <p>حشوات، تنظيف GBT، زراعة وتجميل الأسنان بأيدي متخصصة.</p>
+        <div class="svc-name">طب وتجميل الأسنان</div>
+        <div class="svc-desc">حشوات، تنظيف GBT، زراعة أسنان، وتجميل الابتسامة.</div>
       </div>
     </div>
     <div class="svc-card">
-      <div class="svc-icon ci5">💧</div>
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 15H9v-2h2v-4H9V9h4v8zm-1-10a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/></svg>
+      </div>
       <div>
-        <h3>العناية بالبشرة</h3>
-        <p>هايدروفيشل، تقشير كيميائي، ونضارة — مخصصة لكل نوع بشرة.</p>
+        <div class="svc-name">العناية بالبشرة</div>
+        <div class="svc-desc">هايدروفيشل، تقشير كيميائي، ونضارة — برتوكول مخصص لكل نوع بشرة.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="section results-section" id="results">
+  <div class="sec-head">
+    <div class="sec-kicker">النتائج</div>
+    <h2 class="sec-title">قبل وبعد</h2>
+    <p class="sec-sub">نتائج حقيقية من عملاء المركز — أضيفي الصور مباشرة في الكود</p>
+  </div>
+
+  <input checked type="radio" name="restab" id="r1">
+  <input type="radio" name="restab" id="r2">
+
+  <div class="results-tabs">
+    <label class="res-tab-label rl1" for="r1">نتائج الليزر</label>
+    <label class="res-tab-label rl2" for="r2">نتائج التجميل</label>
+  </div>
+
+  <div class="res-panels">
+    <!-- Laser results -->
+    <div class="res-panel" id="rp1">
+      <div class="ba-grid">
+        <div class="ba-card">
+          <div class="ba-img-row">
+            <div class="ba-side before">
+              <svg class="ba-placeholder" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+              <span class="ba-side-label">قبل</span>
+            </div>
+            <div class="ba-side after">
+              <svg class="ba-placeholder" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+              <span class="ba-side-label">بعد</span>
+            </div>
+          </div>
+          <div class="ba-info">
+            <div class="ba-info-title">نتيجة ليزر الجسم</div>
+            <div class="ba-info-desc">أضيفي وصف الحالة وعدد الجلسات والمنطقة المعالجة</div>
+            <div class="ba-info-meta">
+              <span class="ba-tag">Clarity II</span>
+              <span class="ba-tag">3 جلسات</span>
+            </div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-img-row">
+            <div class="ba-side before">
+              <svg class="ba-placeholder" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+              <span class="ba-side-label">قبل</span>
+            </div>
+            <div class="ba-side after">
+              <svg class="ba-placeholder" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+              <span class="ba-side-label">بعد</span>
+            </div>
+          </div>
+          <div class="ba-info">
+            <div class="ba-info-title">نتيجة ليزر الوجه</div>
+            <div class="ba-info-desc">أضيفي وصف الحالة وعدد الجلسات والمنطقة المعالجة</div>
+            <div class="ba-info-meta">
+              <span class="ba-tag">DEKA Motus</span>
+              <span class="ba-tag">4 جلسات</span>
+            </div>
+          </div>
+        </div>
+        <div class="ba-add-hint">
+          <p>لإضافة صور: في كل <code style="background:rgba(247,87,37,0.15);color:var(--c4);padding:2px 6px;border-radius:4px;font-size:11px">.ba-side</code> احذفي الـ SVG وضعي <code style="background:rgba(247,87,37,0.15);color:var(--c4);padding:2px 6px;border-radius:4px;font-size:11px">&lt;img src="..."&gt;</code> بدله</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aesthetic results -->
+    <div class="res-panel" id="rp2">
+      <div class="ba-grid">
+        <div class="ba-card">
+          <div class="ba-img-row">
+            <div class="ba-side before">
+              <svg class="ba-placeholder" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+              <span class="ba-side-label">قبل</span>
+            </div>
+            <div class="ba-side after">
+              <svg class="ba-placeholder" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+              <span class="ba-side-label">بعد</span>
+            </div>
+          </div>
+          <div class="ba-info">
+            <div class="ba-info-title">نتيجة الفلر</div>
+            <div class="ba-info-desc">أضيفي وصف الحالة ونوع المادة المستخدمة</div>
+            <div class="ba-info-meta">
+              <span class="ba-tag">فلر</span>
+              <span class="ba-tag">جلسة واحدة</span>
+            </div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-img-row">
+            <div class="ba-side before">
+              <svg class="ba-placeholder" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+              <span class="ba-side-label">قبل</span>
+            </div>
+            <div class="ba-side after">
+              <svg class="ba-placeholder" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+              <span class="ba-side-label">بعد</span>
+            </div>
+          </div>
+          <div class="ba-info">
+            <div class="ba-info-title">نتيجة البوتوكس</div>
+            <div class="ba-info-desc">أضيفي وصف الحالة والوحدات المستخدمة</div>
+            <div class="ba-info-meta">
+              <span class="ba-tag">بوتوكس</span>
+              <span class="ba-tag">جلسة واحدة</span>
+            </div>
+          </div>
+        </div>
+        <div class="ba-add-hint">
+          <p>لإضافة صور: في كل <code style="background:rgba(247,87,37,0.15);color:var(--c4);padding:2px 6px;border-radius:4px;font-size:11px">.ba-side</code> احذفي الـ SVG وضعي <code style="background:rgba(247,87,37,0.15);color:var(--c4);padding:2px 6px;border-radius:4px;font-size:11px">&lt;img src="..."&gt;</code> بدله</p>
+        </div>
       </div>
     </div>
   </div>
@@ -385,57 +615,74 @@ input[name=tab]{display:none}
 
 <!-- CONTACT -->
 <section class="section contact-section" id="contact">
-  <div class="section-eyebrow">تواصل معنا</div>
-  <h2 class="section-title">احجزي موعدك</h2>
-  <p class="section-sub">الحجز عبر واتساب فقط — نرد بسرعة.</p>
+  <div class="sec-head">
+    <div class="sec-kicker">تواصل</div>
+    <h2 class="sec-title">احجزي موعدك</h2>
+    <p class="sec-sub">الحجز عبر واتساب فقط — نرد خلال دقائق.</p>
+  </div>
   <div class="contact-list">
     <div class="contact-row">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-      كربلاء — حي الحسين، مقابل القاعة المغلقة
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      </div>
+      <div>
+        <div class="contact-row-label">الموقع</div>
+        <div class="contact-row-val">كربلاء — حي الحسين، مقابل القاعة المغلقة</div>
+      </div>
     </div>
     <div class="contact-row">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-      الاسم على الخريطة: مركز فاملي لطب الأسنان والتجميل
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.124 1.524 5.858L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+      </div>
+      <div>
+        <div class="contact-row-label">واتساب</div>
+        <div class="contact-row-val" dir="ltr" style="text-align:right">+964 774 031 7888</div>
+      </div>
     </div>
     <div class="contact-row">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-      واتساب: ‎+964 774 031 7888
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+      </div>
+      <div>
+        <div class="contact-row-label">اسم الخريطة</div>
+        <div class="contact-row-val">مركز فاملي لطب الأسنان والتجميل</div>
+      </div>
     </div>
   </div>
-  <a class="cta-wa" href="https://wa.me/9647740317888" target="_blank">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.124 1.524 5.858L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-    افتحي واتساب للحجز
+  <a class="cta-wa-btn" href="https://wa.me/9647740317888" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.124 1.524 5.858L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+    ابدئي المحادثة على واتساب
   </a>
 </section>
 
-<footer class="foot">© فاملي لطب التجميل والليزر — كربلاء</footer>
+<footer class="foot">
+  <span>فاملي لطب التجميل والليزر</span> — جميع الحقوق محفوظة
+</footer>
 </div>
 
-<!-- Float WA -->
+<!-- Floating WA -->
 <a class="float-wa" href="https://wa.me/9647740317888" target="_blank" aria-label="واتساب">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.124 1.524 5.858L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.124 1.524 5.858L.057 23.998l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
 </a>
 
 <!-- Bottom Nav -->
 <nav class="bnav">
-  <div class="bnav-inner">
-    <a href="#home" class="active">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      الرئيسية
-    </a>
-    <a href="#offers">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
-      العروض
-    </a>
-    <a href="#services">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-      الأقسام
-    </a>
-    <a class="bnav-book" href="https://wa.me/9647740317888" target="_blank">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-      حجز
-    </a>
-  </div>
+  <a href="#home">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    الرئيسية
+  </a>
+  <a href="#offers">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+    العروض
+  </a>
+  <a href="#results">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    النتائج
+  </a>
+  <a class="bnav-book" href="https://wa.me/9647740317888" target="_blank">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    حجز
+  </a>
 </nav>
 </body>
 </html>
